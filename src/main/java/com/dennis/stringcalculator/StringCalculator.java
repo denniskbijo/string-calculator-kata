@@ -46,7 +46,7 @@ public class StringCalculator {
 		if (numbers.isEmpty()) {
 			return sum;
 		} else {
-			// Split by comma and add numbers
+			// Split by comma or newline and add numbers
 			String[] split = numbers.split(",|\n");
 			for (int i = 0; i < split.length; i++) {
 				sum += Integer.parseInt(split[i]);
