@@ -1,38 +1,21 @@
 package com.dennis.stringcalculator;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /**
- * Unit test for simple StringCalculator.
+ * Unit tests for simple StringCalculator.
  */
-public class StringCalculatorTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public StringCalculatorTest( String testName )
-    {
-        super( testName );
-    }
+@RunWith(JUnit4.class)
+public class StringCalculatorTest {
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( StringCalculatorTest.class );
-    }
+	@Test
+	public void testSumsEmptyStringToZero() {
+		assertEquals(0, StringCalculator.Add(""));
+	}
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+
 }
