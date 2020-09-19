@@ -45,4 +45,10 @@ public class StringCalculatorTest {
 		assertEquals(11, StringCalculator.Add("1\n4,6"));
 	}
 
+	@Test
+	public void testSumNumberSeperatedBySpecifiedDelimiter() {
+		assertEquals(6, StringCalculator.Add("//,\n1,2,3"));
+		assertEquals(10, StringCalculator.Add("//;\n1;2;7"));
+	}
+
 }
