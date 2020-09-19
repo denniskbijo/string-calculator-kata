@@ -43,15 +43,16 @@ public class StringCalculator {
 	public static int Add(String numbers) {
 		int sum = 0;
 
-		if (numbers.contains(",") && !numbers.isEmpty()) {
+		if (numbers.isEmpty()) {
+			return sum;
+		} else {
 			// Split by comma and add numbers
-			String[] split = numbers.split(",");
+			String[] split = numbers.split(",|\n");
 			for (int i = 0; i < split.length; i++) {
 				sum += Integer.parseInt(split[i]);
-			}
-		} else if (!numbers.isEmpty()) {
-			sum = Integer.parseInt(numbers);
 		}
-		return sum;
+			return sum;
+		}
 	}
 }
+
