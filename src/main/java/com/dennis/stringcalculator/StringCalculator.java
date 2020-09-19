@@ -41,19 +41,19 @@ if there are multiple negatives, show all of them in the exception message.
 public class StringCalculator {
 
 	public static int Add(String numbers) {
+		int sum = 0;
 
 		if (numbers.isEmpty()) {
-			return 0;
+			sum = 0;
 		} else if (numbers.contains(",")) {
 			// Split by comma and add numbers
-			int sum = 0;
 			String[] split = numbers.split(",");
 			for (int i = 0; i < split.length; i++) {
 				sum += Integer.parseInt(split[i]);
 			}
-			return sum;
 		} else {
-			return Integer.parseInt(numbers);
+			sum = Integer.parseInt(numbers);
 		}
+		return sum;
 	}
 }
