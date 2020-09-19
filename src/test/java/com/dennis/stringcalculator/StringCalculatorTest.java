@@ -39,5 +39,10 @@ public class StringCalculatorTest {
 		assertEquals(44, StringCalculator.Add("1\n4\n6\n33"));
 	}
 
+	@Test
+	public void testSumNumberSeperatedByCommaOrNewLine() {
+		assertEquals(6, StringCalculator.Add("1,4\n1"));
+		assertEquals(11, StringCalculator.Add("1\n4,6"));
+	}
 
 }
