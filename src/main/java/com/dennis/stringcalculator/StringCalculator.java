@@ -40,7 +40,7 @@ if there are multiple negatives, show all of them in the exception message.
  */
 public class StringCalculator {
 
-	public static void main(String[] args) {
-        System.out.println( "Hello World!" );
+	public static int Add(String numbers) {
+		return -1;
     }
 }
