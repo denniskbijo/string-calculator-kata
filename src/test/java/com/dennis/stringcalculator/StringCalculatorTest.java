@@ -24,5 +24,9 @@ public class StringCalculatorTest {
 		assertEquals(45, StringCalculator.Add("45"));
 	}
 
+	@Test
+	public void testSumNumberSeperatedByComma() {
+		assertEquals(3, StringCalculator.Add("1,2"));
+	}
 
 }
