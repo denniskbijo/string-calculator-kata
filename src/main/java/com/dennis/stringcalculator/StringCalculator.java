@@ -59,19 +59,19 @@ public class StringCalculator {
 
 		// Setting default delimiter
 		String delimiter = ",|\n";
+		StringCalculator calculator = new StringCalculator(delimiter, numbers);
 		// Handle specified delimiter if any
 		if (numbers.startsWith("//")) {
 			// Split until delimiter
 			String[] split = numbers.split("\n", 2);
 			// Assign the remaining part as numbers
-			numbers = split[1];
 			// Assign the part after // as new delimiter
-			delimiter = split[0].substring(2);
+			calculator = new StringCalculator(split[0].substring(2), split[1]);
 
 		}
 		if (!numbers.isEmpty()) {
 			// Using stream to Split by comma or newline and add numbers
-			Stream<String> stream = Arrays.stream(numbers.split(delimiter));
+			Stream<String> stream = Arrays.stream(calculator.numbers.split(calculator.delimiter));
 			sum = stream.mapToInt(Integer::parseInt).sum();
 		}
 		return sum;
