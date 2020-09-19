@@ -42,6 +42,17 @@ if there are multiple negatives, show all of them in the exception message.
  *
  */
 public class StringCalculator {
+	
+	private String delimiter;
+	private String numbers;
+	
+
+	public StringCalculator(String delimiter, String numbers) {
+		super();
+		this.delimiter = delimiter;
+		this.numbers = numbers;
+	}
+
 
 	public static int Add(String numbers) {
 		int sum = 0;
