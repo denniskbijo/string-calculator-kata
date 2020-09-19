@@ -46,9 +46,21 @@ public class StringCalculator {
 	public static int Add(String numbers) {
 		int sum = 0;
 
+		// Setting default delimiter
+		String delimiter = ",|\n";
+		// Handle specified delimiter if any
+		if (numbers.startsWith("//")) {
+			// Split until delimiter
+			String[] split = numbers.split("\n", 2);
+			// Assign the remaining part as numbers
+			numbers = split[1];
+			// Assign the part after // as new delimiter
+			delimiter = split[0].substring(2);
+
+		}
 		if (!numbers.isEmpty()) {
 			// Using stream to Split by comma or newline and add numbers
-			Stream<String> stream = Arrays.stream(numbers.split(",|\n"));
+			Stream<String> stream = Arrays.stream(numbers.split(delimiter));
 			sum = stream.mapToInt(Integer::parseInt).sum();
 		}
 		return sum;
