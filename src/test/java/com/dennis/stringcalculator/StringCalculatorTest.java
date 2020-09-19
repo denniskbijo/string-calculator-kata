@@ -32,4 +32,12 @@ public class StringCalculatorTest {
 		assertEquals(11, StringCalculator.Add("1,4,6"));
 	}
 
+	@Test
+	public void testSumNumberSeperatedByNewLine() {
+		assertEquals(3, StringCalculator.Add("1\n2"));
+		assertEquals(5, StringCalculator.Add("1\n4"));
+		assertEquals(6, StringCalculator.Add("1\n4\n1"));
+		assertEquals(11, StringCalculator.Add("1\n4\n6"));
+	}
+
 }
