@@ -17,5 +17,9 @@ public class StringCalculatorTest {
 		assertEquals(0, StringCalculator.Add(""));
 	}
 
+	@Test
+	public void testSumSingleNumberToItself() {
+		assertEquals(1, StringCalculator.Add("1"));
+	}
 
 }
