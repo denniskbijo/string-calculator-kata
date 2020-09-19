@@ -41,6 +41,10 @@ if there are multiple negatives, show all of them in the exception message.
 public class StringCalculator {
 
 	public static int Add(String numbers) {
-		return 0;
+		if (numbers.isEmpty()) {
+			return 0;
+		} else {
+			return 1;
+		}
     }
 }
