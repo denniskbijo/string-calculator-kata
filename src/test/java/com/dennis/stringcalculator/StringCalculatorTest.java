@@ -21,6 +21,8 @@ public class StringCalculatorTest {
 	public void testSumSingleNumberToItself() {
 		assertEquals(1, StringCalculator.Add("1"));
 		assertEquals(5, StringCalculator.Add("5"));
+		assertEquals(45, StringCalculator.Add("45"));
 	}
+
 
 }
