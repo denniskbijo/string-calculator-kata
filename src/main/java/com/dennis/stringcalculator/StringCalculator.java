@@ -1,5 +1,8 @@
 package com.dennis.stringcalculator;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 /**
  * 
 1. Create a simple String calculator with a method signature:
@@ -43,16 +46,13 @@ public class StringCalculator {
 	public static int Add(String numbers) {
 		int sum = 0;
 
-		if (numbers.isEmpty()) {
-			return sum;
-		} else {
-			// Split by comma or newline and add numbers
-			String[] split = numbers.split(",|\n");
-			for (int i = 0; i < split.length; i++) {
-				sum += Integer.parseInt(split[i]);
+		if (!numbers.isEmpty()) {
+			// Using stream to Split by comma or newline and add numbers
+			Stream<String> stream = Arrays.stream(numbers.split(",|\n"));
+			sum = stream.mapToInt(Integer::parseInt).sum();
 		}
-			return sum;
-		}
+		return sum;
 	}
+
 }
 
