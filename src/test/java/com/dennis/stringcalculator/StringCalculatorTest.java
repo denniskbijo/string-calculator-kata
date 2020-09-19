@@ -20,6 +20,7 @@ public class StringCalculatorTest {
 	@Test
 	public void testSumSingleNumberToItself() {
 		assertEquals(1, StringCalculator.Add("1"));
+		assertEquals(5, StringCalculator.Add("5"));
 	}
 
 }
