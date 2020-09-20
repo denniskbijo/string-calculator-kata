@@ -78,13 +78,7 @@ public class StringCalculator {
 
 	// Custom Methods
 	public static int Add(String numbers) {
-		int sum = 0;
-
-		StringCalculator calculator = initCalculator(numbers);
-		if (!numbers.isEmpty()) {
-			sum = calculator.add();
-		}
-		return sum;
+		return initCalculator(numbers).add();
 	}
 
 	private static StringCalculator initCalculator(String numbers) {
