@@ -63,6 +63,8 @@ public class StringCalculator {
 		return getNumberStream().sum();
 	}
 
+	// Custom Methods
+
 	private void validatePositiveNumbers() {
 		// Get all negative numbers as comma seperated
 		String negativeNumbers = getNumberStream().filter(n -> n < 0).mapToObj(Integer::toString)
@@ -83,7 +85,7 @@ public class StringCalculator {
 		}
 	}
 
-	// Custom Methods
+
 	public static int Add(String numbers) {
 		return initCalculator(numbers).add();
 	}
