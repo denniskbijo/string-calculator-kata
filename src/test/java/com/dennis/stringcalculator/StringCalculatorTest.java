@@ -103,4 +103,10 @@ public class StringCalculatorTest {
 		assertEquals(18, StringCalculator.Add("//[?][-][;]\n1?2;7-8"));
 	}
 
+	@Test
+	public void testSumNumbersByMultiCharacterDelimiters() {
+		assertEquals(6, StringCalculator.Add("//[$_$][*;]\n1$_$2*;3"));
+		assertEquals(18, StringCalculator.Add("//[?-?][-][;/]\n1?-?2-7;/8"));
+	}
+
 }
