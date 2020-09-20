@@ -72,8 +72,12 @@ public class StringCalculator {
 	}
 
 	private IntStream getNumberStream() {
+		if (numbers.isEmpty()) {
+			return IntStream.empty();
+		} else {
 		// Using stream to Split by comma or newline and add numbers
 		return Arrays.stream(numbers.split(delimiter)).mapToInt(Integer::parseInt);
+		}
 	}
 
 	// Custom Methods
