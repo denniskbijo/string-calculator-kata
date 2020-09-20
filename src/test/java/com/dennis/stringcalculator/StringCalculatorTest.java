@@ -62,5 +62,12 @@ public class StringCalculatorTest {
 		StringCalculator.Add("-10");
 	}
 
+	@Test
+	public void testThrowsMessageOnNegativeNumber() {
+		exception.expect(IllegalArgumentException.class);
+		exception.expectMessage("negative number found");
+		StringCalculator.Add("-20");
+	}
+
 
 }
