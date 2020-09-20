@@ -43,6 +43,7 @@ if there are multiple negatives, show all of them in the exception message.
  */
 public class StringCalculator {
 	
+	// Calculator Instance variables
 	private String delimiter;
 	private String numbers;
 	
@@ -53,12 +54,14 @@ public class StringCalculator {
 		this.numbers = numbers;
 	}
 
+	// Instance method to add numbers split by delimiter
 	private int add() {
 		// Using stream to Split by comma or newline and add numbers
 		Stream<String> stream = Arrays.stream(numbers.split(delimiter));
 		return stream.mapToInt(Integer::parseInt).sum();
 	}
 
+	// Custom Methods
 	public static int Add(String numbers) {
 		int sum = 0;
 
@@ -68,8 +71,6 @@ public class StringCalculator {
 		}
 		return sum;
 	}
-
-
 
 	private static StringCalculator initCalculator(String numbers) {
 		// Setting default delimiter
