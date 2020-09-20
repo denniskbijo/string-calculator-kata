@@ -56,6 +56,10 @@ public class StringCalculator {
 
 	// Instance method to add numbers split by delimiter
 	private int add() {
+		// Handle negative numbers in stream
+		if (getNumberStream().anyMatch(n -> n < 0)) {
+			throw new IllegalArgumentException();
+		}
 		return getNumberStream().sum();
 	}
 
