@@ -58,10 +58,10 @@ public class StringCalculator {
 	// Instance method to add numbers split by delimiter
 	private int add() {
 		// Handle negative numbers in stream
-		if (getNumberStream().anyMatch(n -> n < 0)) {
-			// Get all negative numbers as comma seperated
-			String negativeNumbers = getNumberStream().filter(n -> n < 0).mapToObj(Integer::toString)
-					.collect(Collectors.joining(","));
+		// Get all negative numbers as comma seperated
+		String negativeNumbers = getNumberStream().filter(n -> n < 0).mapToObj(Integer::toString)
+				.collect(Collectors.joining(","));
+		if (!negativeNumbers.isEmpty()) {
 			throw new IllegalArgumentException("negative number found: " + negativeNumbers);
 		}
 		return getNumberStream().sum();
