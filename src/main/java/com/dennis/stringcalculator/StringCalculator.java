@@ -57,7 +57,7 @@ public class StringCalculator {
 	public static int Add(String numbers) {
 		int sum = 0;
 
-		StringCalculator calculator = parseInput(numbers);
+		StringCalculator calculator = initCalculator(numbers);
 		if (!numbers.isEmpty()) {
 			sum = calculator.add();
 		}
@@ -73,7 +73,7 @@ public class StringCalculator {
 		return sum;
 	}
 
-	private static StringCalculator parseInput(String numbers) {
+	private static StringCalculator initCalculator(String numbers) {
 		// Setting default delimiter
 		String delimiter = ",|\n";
 		StringCalculator calculator = new StringCalculator(delimiter, numbers);
