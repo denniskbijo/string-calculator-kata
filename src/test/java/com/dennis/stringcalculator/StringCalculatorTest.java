@@ -85,5 +85,10 @@ public class StringCalculatorTest {
 		assertEquals(1010, StringCalculator.Add("10,1000,9999"));
 	}
 
+	@Test
+	public void testSumNumbersBySpecialCharacterDelimiter() {
+		assertEquals(6, StringCalculator.Add("//.\n1.2.3"));
+		assertEquals(10, StringCalculator.Add("//?\n1?2?7"));
+	}
 
 }
