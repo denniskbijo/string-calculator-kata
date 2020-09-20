@@ -2,7 +2,9 @@ package com.dennis.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -51,9 +53,14 @@ public class StringCalculatorTest {
 		assertEquals(10, StringCalculator.Add("//;\n1;2;7"));
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
+
+	@Test
 	public void testThrowsExceptionOnNegativeNumber() {
+		exception.expect(IllegalArgumentException.class);
 		StringCalculator.Add("-10");
 	}
+
 
 }
