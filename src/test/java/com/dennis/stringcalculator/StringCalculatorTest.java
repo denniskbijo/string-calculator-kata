@@ -51,4 +51,9 @@ public class StringCalculatorTest {
 		assertEquals(10, StringCalculator.Add("//;\n1;2;7"));
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void testThrowsOnNegativeNumber() {
+		StringCalculator.Add("-10");
+	}
+
 }
