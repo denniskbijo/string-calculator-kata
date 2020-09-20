@@ -91,4 +91,10 @@ public class StringCalculatorTest {
 		assertEquals(10, StringCalculator.Add("//?\n1?2?7"));
 	}
 
+	@Test
+	public void testSumNumbersByBracketedDelimiter() {
+		assertEquals(6, StringCalculator.Add("//[.]\n1.2.3"));
+		assertEquals(10, StringCalculator.Add("//[?]\n1?2?7"));
+	}
+
 }
