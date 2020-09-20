@@ -1,7 +1,7 @@
 package com.dennis.stringcalculator;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
 /**
  * 
@@ -56,9 +56,12 @@ public class StringCalculator {
 
 	// Instance method to add numbers split by delimiter
 	private int add() {
+		return getNumberStream().sum();
+	}
+
+	private IntStream getNumberStream() {
 		// Using stream to Split by comma or newline and add numbers
-		Stream<String> stream = Arrays.stream(numbers.split(delimiter));
-		return stream.mapToInt(Integer::parseInt).sum();
+		return Arrays.stream(numbers.split(delimiter)).mapToInt(Integer::parseInt);
 	}
 
 	// Custom Methods
