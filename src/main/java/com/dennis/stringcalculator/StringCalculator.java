@@ -112,7 +112,10 @@ public class StringCalculator {
 			// Removes brackets to get the delimiter
 			delimiter = delimiter.substring(1, delimiter.length() - 1);
 		}
-		return Pattern.quote(delimiter);
+		// Find delimiters separated by ][
+		return Stream.of(delimiter.split("]\\["))
+				.map(Pattern::quote)
+				.collect(Collectors.joining("|"));// Distinguish delimiters by pipe
 	}
 
 }
