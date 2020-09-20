@@ -107,7 +107,12 @@ public class StringCalculator {
 
 	private static String processDelimiter(String delimiterPart) {
 		// Assign the part after // as new delimiter
-		return Pattern.quote(delimiterPart.substring(2));
+		String delimiter = delimiterPart.substring(2);
+		if (delimiter.startsWith("[")) {
+			// Removes brackets to get the delimiter
+			delimiter = delimiter.substring(1, delimiter.length() - 1);
+		}
+		return Pattern.quote(delimiter);
 	}
 
 }
