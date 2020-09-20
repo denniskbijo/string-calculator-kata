@@ -66,11 +66,9 @@ public class StringCalculator {
 
 
 	private int add() {
-		int sum;
 		// Using stream to Split by comma or newline and add numbers
 		Stream<String> stream = Arrays.stream(numbers.split(delimiter));
-		sum = stream.mapToInt(Integer::parseInt).sum();
-		return sum;
+		return stream.mapToInt(Integer::parseInt).sum();
 	}
 
 	private static StringCalculator initCalculator(String numbers) {
