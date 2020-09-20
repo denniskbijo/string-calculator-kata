@@ -53,6 +53,11 @@ public class StringCalculator {
 		this.numbers = numbers;
 	}
 
+	private int add() {
+		// Using stream to Split by comma or newline and add numbers
+		Stream<String> stream = Arrays.stream(numbers.split(delimiter));
+		return stream.mapToInt(Integer::parseInt).sum();
+	}
 
 	public static int Add(String numbers) {
 		int sum = 0;
@@ -65,11 +70,6 @@ public class StringCalculator {
 	}
 
 
-	private int add() {
-		// Using stream to Split by comma or newline and add numbers
-		Stream<String> stream = Arrays.stream(numbers.split(delimiter));
-		return stream.mapToInt(Integer::parseInt).sum();
-	}
 
 	private static StringCalculator initCalculator(String numbers) {
 		// Setting default delimiter
