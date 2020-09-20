@@ -59,10 +59,17 @@ public class StringCalculator {
 
 		StringCalculator calculator = parseInput(numbers);
 		if (!numbers.isEmpty()) {
-			// Using stream to Split by comma or newline and add numbers
-			Stream<String> stream = Arrays.stream(calculator.numbers.split(calculator.delimiter));
-			sum = stream.mapToInt(Integer::parseInt).sum();
+			sum = add(calculator);
 		}
+		return sum;
+	}
+
+
+	private static int add(StringCalculator calculator) {
+		int sum;
+		// Using stream to Split by comma or newline and add numbers
+		Stream<String> stream = Arrays.stream(calculator.numbers.split(calculator.delimiter));
+		sum = stream.mapToInt(Integer::parseInt).sum();
 		return sum;
 	}
 
