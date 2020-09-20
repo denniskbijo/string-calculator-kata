@@ -76,7 +76,9 @@ public class StringCalculator {
 			return IntStream.empty();
 		} else {
 		// Using stream to Split by comma or newline and add numbers
-			return Stream.of(numbers.split(delimiter)).mapToInt(Integer::parseInt);
+			return Stream.of(numbers.split(delimiter))
+					.mapToInt(Integer::parseInt)
+					.map(n -> n > 1000 ? 0 : n);// Ignore Numbers greater than 1000
 		}
 	}
 
