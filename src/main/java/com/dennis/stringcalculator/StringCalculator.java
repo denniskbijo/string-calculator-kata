@@ -1,8 +1,8 @@
 package com.dennis.stringcalculator;
 
-import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * 
@@ -76,7 +76,7 @@ public class StringCalculator {
 			return IntStream.empty();
 		} else {
 		// Using stream to Split by comma or newline and add numbers
-		return Arrays.stream(numbers.split(delimiter)).mapToInt(Integer::parseInt);
+			return Stream.of(numbers.split(delimiter)).mapToInt(Integer::parseInt);
 		}
 	}
 
