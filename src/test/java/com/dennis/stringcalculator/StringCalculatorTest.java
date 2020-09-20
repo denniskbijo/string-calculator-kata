@@ -52,7 +52,7 @@ public class StringCalculatorTest {
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testThrowsOnNegativeNumber() {
+	public void testThrowsExceptionOnNegativeNumber() {
 		StringCalculator.Add("-10");
 	}
 
