@@ -76,5 +76,14 @@ public class StringCalculatorTest {
 		StringCalculator.Add("-20,-10");
 	}
 
+	@Test
+	public void testIgnoreNumbersGreaterThan1000() {
+		assertEquals(0, StringCalculator.Add("1001"));
+		assertEquals(10, StringCalculator.Add("10,1001"));
+		assertEquals(1010, StringCalculator.Add("10,1000"));
+		assertEquals(2009, StringCalculator.Add("10,1000,999"));
+		assertEquals(1010, StringCalculator.Add("10,1000,9999"));
+	}
+
 
 }
