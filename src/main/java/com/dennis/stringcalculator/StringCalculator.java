@@ -57,6 +57,16 @@ public class StringCalculator {
 	public static int Add(String numbers) {
 		int sum = 0;
 
+		StringCalculator calculator = parseInput(numbers);
+		if (!numbers.isEmpty()) {
+			// Using stream to Split by comma or newline and add numbers
+			Stream<String> stream = Arrays.stream(calculator.numbers.split(calculator.delimiter));
+			sum = stream.mapToInt(Integer::parseInt).sum();
+		}
+		return sum;
+	}
+
+	private static StringCalculator parseInput(String numbers) {
 		// Setting default delimiter
 		String delimiter = ",|\n";
 		StringCalculator calculator = new StringCalculator(delimiter, numbers);
@@ -69,12 +79,7 @@ public class StringCalculator {
 			calculator = new StringCalculator(split[0].substring(2), split[1]);
 
 		}
-		if (!numbers.isEmpty()) {
-			// Using stream to Split by comma or newline and add numbers
-			Stream<String> stream = Arrays.stream(calculator.numbers.split(calculator.delimiter));
-			sum = stream.mapToInt(Integer::parseInt).sum();
-		}
-		return sum;
+		return calculator;
 	}
 
 }
