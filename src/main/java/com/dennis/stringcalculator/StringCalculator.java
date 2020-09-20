@@ -58,7 +58,7 @@ public class StringCalculator {
 	private int add() {
 		// Handle negative numbers in stream
 		if (getNumberStream().anyMatch(n -> n < 0)) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("negative number found");
 		}
 		return getNumberStream().sum();
 	}
