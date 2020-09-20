@@ -1,5 +1,6 @@
 package com.dennis.stringcalculator;
 
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -96,11 +97,17 @@ public class StringCalculator {
 			// Split until delimiter
 			String[] split = numbers.split("\n", 2);
 			// Assign the remaining part as numbers
-			// Assign the part after // as new delimiter
-			calculator = new StringCalculator(split[0].substring(2), split[1]);
+			String delimiterPart = split[0];
+			// Handles special characters in delimiter
+			calculator = new StringCalculator(processDelimiter(delimiterPart), split[1]);
 
 		}
 		return calculator;
+	}
+
+	private static String processDelimiter(String delimiterPart) {
+		// Assign the part after // as new delimiter
+		return Pattern.quote(delimiterPart.substring(2));
 	}
 
 }
