@@ -1,6 +1,7 @@
 package com.dennis.stringcalculator;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -58,7 +59,10 @@ public class StringCalculator {
 	private int add() {
 		// Handle negative numbers in stream
 		if (getNumberStream().anyMatch(n -> n < 0)) {
-			throw new IllegalArgumentException("negative number found");
+			// Get all negative numbers as comma seperated
+			String negativeNumbers = getNumberStream().filter(n -> n < 0).mapToObj(Integer::toString)
+					.collect(Collectors.joining(","));
+			throw new IllegalArgumentException("negative number found: " + negativeNumbers);
 		}
 		return getNumberStream().sum();
 	}
